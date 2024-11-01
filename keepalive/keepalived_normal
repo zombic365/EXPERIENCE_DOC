@@ -1,0 +1,103 @@
+[O] /var/log/message 에서 Keepalived_vrrp 로그 확인
+=> 특이사항 없음
+
+[O] 연동된 기타 장비에서도 Keepalived_vrrp 로그 확인
+
+[O] 재기동 이후 Keepalived_vrrp 동작 확인
+
+Nov  1 16:14:11 ------- systemd[1]: Stopping LVS and VRRP High Availability Monitor...
+Nov  1 16:14:11 ------- Keepalived[665307]: Stopping
+Nov  1 16:14:11 ------- Keepalived_vrrp[665308]: (VI_1) sent 0 priority
+Nov  1 16:14:11 ------- Keepalived_vrrp[665308]: (VI_1) removing VIPs.
+Nov  1 16:14:11 ------- Keepalived_vrrp[665308]: (VI_2) sent 0 priority
+Nov  1 16:14:11 ------- Keepalived_vrrp[665308]: (VI_2) removing VIPs.
+Nov  1 16:14:12 ------- Keepalived_vrrp[665308]: Stopped - used 60.078129 user time, 238.639293 system time
+Nov  1 16:14:12 ------- Keepalived[665307]: CPU usage (self/children) user: 0.000000/516.835041 system: 0.001603/1639.608716
+Nov  1 16:14:12 ------- Keepalived[665307]: Stopped Keepalived v2.1.5 (07/13,2020)
+Nov  1 16:14:12 ------- systemd[1]: keepalived.service: Succeeded.
+Nov  1 16:14:12 ------- systemd[1]: Stopped LVS and VRRP High Availability Monitor.
+Nov  1 16:14:12 ------- systemd[1]: Starting LVS and VRRP High Availability Monitor...
+Nov  1 16:14:12 ------- Keepalived[1001946]: Starting Keepalived v2.1.5 (07/13,2020)
+Nov  1 16:14:12 ------- Keepalived[1001946]: Running on Linux 4.18.0-513.9.1.el8_9.x86_64 #1 SMP Wed Nov 29 18:55:19 UTC 2023 (built for Linux 4.18.0)
+Nov  1 16:14:12 ------- Keepalived[1001946]: Command line: '/usr/sbin/keepalived' '-D'
+Nov  1 16:14:12 ------- Keepalived[1001946]: Opening file '/etc/keepalived/keepalived.conf'.
+Nov  1 16:14:12 ------- systemd[1]: Started LVS and VRRP High Availability Monitor.
+Nov  1 16:14:12 ------- Keepalived[1001947]: NOTICE: setting config option max_auto_priority should result in better keepalived performance
+Nov  1 16:14:12 ------- Keepalived[1001947]: Starting VRRP child process, pid=1001948
+Nov  1 16:14:12 ------- Keepalived_vrrp[1001948]: Registering Kernel netlink reflector
+Nov  1 16:14:12 ------- Keepalived_vrrp[1001948]: Registering Kernel netlink command channel
+Nov  1 16:14:12 ------- Keepalived_vrrp[1001948]: Opening file '/etc/keepalived/keepalived.conf'.
+Nov  1 16:14:12 ------- Keepalived_vrrp[1001948]: SECURITY VIOLATION - scripts are being executed but script_security not enabled.
+Nov  1 16:14:12 ------- Keepalived_vrrp[1001948]: Assigned address AA_IP for interface enp1s0
+Nov  1 16:14:12 ------- Keepalived_vrrp[1001948]: Assigned address A_IP for interface enp2s0
+Nov  1 16:14:12 ------- Keepalived_vrrp[1001948]: Registering gratuitous ARP shared channel
+Nov  1 16:14:12 ------- Keepalived_vrrp[1001948]: (VI_1) removing VIPs.
+Nov  1 16:14:12 ------- Keepalived_vrrp[1001948]: (VI_2) removing VIPs.
+Nov  1 16:14:12 ------- Keepalived_vrrp[1001948]: (VI_1) Entering BACKUP STATE (init)
+Nov  1 16:14:12 ------- Keepalived_vrrp[1001948]: (VI_2) Entering BACKUP STATE (init)
+Nov  1 16:14:12 ------- Keepalived_vrrp[1001948]: VRRP sockpool: [ifindex(  2), family(IPv4), proto(112), fd(11,12)]
+Nov  1 16:14:12 ------- Keepalived_vrrp[1001948]: VRRP sockpool: [ifindex(  3), family(IPv4), proto(112), fd(13,14)]
+Nov  1 16:14:12 ------- Keepalived_vrrp[1001948]: VRRP_Script(chk_vault) succeeded
+Nov  1 16:14:13 ------- Keepalived_vrrp[1001948]: (VI_1) received lower priority (98) advert from BB_IP - discarding
+Nov  1 16:14:13 ------- Keepalived_vrrp[1001948]: (VI_2) received lower priority (98) advert from B_IP - discarding
+Nov  1 16:14:13 ------- root[1001974]: IP= USER=root, PID=997546, PWD=/root, CMD= 2529 2024-11-01_16:14:13 ip -4 a
+Nov  1 16:14:14 ------- Keepalived_vrrp[1001948]: (VI_2) received lower priority (98) advert from B_IP - discarding
+Nov  1 16:14:14 ------- Keepalived_vrrp[1001948]: (VI_1) received lower priority (98) advert from BB_IP - discarding
+Nov  1 16:14:15 ------- Keepalived_vrrp[1001948]: (VI_2) received lower priority (98) advert from B_IP - discarding
+Nov  1 16:14:15 ------- Keepalived_vrrp[1001948]: (VI_1) received lower priority (98) advert from BB_IP - discarding
+Nov  1 16:14:16 ------- Keepalived_vrrp[1001948]: (VI_2) received lower priority (98) advert from B_IP - discarding
+Nov  1 16:14:16 ------- Keepalived_vrrp[1001948]: (VI_1) received lower priority (98) advert from BB_IP - discarding
+Nov  1 16:14:16 ------- Keepalived_vrrp[1001948]: (VI_1) Receive advertisement timeout
+Nov  1 16:14:16 ------- Keepalived_vrrp[1001948]: (VI_1) Entering MASTER STATE
+Nov  1 16:14:16 ------- Keepalived_vrrp[1001948]: (VI_1) setting VIPs.
+Nov  1 16:14:16 ------- Keepalived_vrrp[1001948]: (VI_1) Sending/queueing gratuitous ARPs on enp1s0 for AA_VIP
+Nov  1 16:14:16 ------- Keepalived_vrrp[1001948]: Sending gratuitous ARP on enp1s0 for AA_VIP
+Nov  1 16:14:16 ------- Keepalived_vrrp[1001948]: Sending gratuitous ARP on enp1s0 for AA_VIP
+Nov  1 16:14:16 ------- Keepalived_vrrp[1001948]: Sending gratuitous ARP on enp1s0 for AA_VIP
+Nov  1 16:14:16 ------- Keepalived_vrrp[1001948]: Sending gratuitous ARP on enp1s0 for AA_VIP
+Nov  1 16:14:16 ------- Keepalived_vrrp[1001948]: Sending gratuitous ARP on enp1s0 for AA_VIP
+Nov  1 16:14:16 ------- Keepalived_vrrp[1001948]: (VI_2) Receive advertisement timeout
+Nov  1 16:14:16 ------- Keepalived_vrrp[1001948]: (VI_2) Entering MASTER STATE
+Nov  1 16:14:16 ------- Keepalived_vrrp[1001948]: (VI_2) setting VIPs.
+Nov  1 16:14:16 ------- Keepalived_vrrp[1001948]: (VI_2) Sending/queueing gratuitous ARPs on enp2s0 for A_VIP
+Nov  1 16:14:16 ------- Keepalived_vrrp[1001948]: Sending gratuitous ARP on enp2s0 for A_VIP
+Nov  1 16:14:16 ------- Keepalived_vrrp[1001948]: Sending gratuitous ARP on enp2s0 for A_VIP
+Nov  1 16:14:16 ------- Keepalived_vrrp[1001948]: Sending gratuitous ARP on enp2s0 for A_VIP
+Nov  1 16:14:16 ------- Keepalived_vrrp[1001948]: Sending gratuitous ARP on enp2s0 for A_VIP
+Nov  1 16:14:16 ------- Keepalived_vrrp[1001948]: Sending gratuitous ARP on enp2s0 for A_VIP
+Nov  1 16:14:21 ------- Keepalived_vrrp[1001948]: (VI_1) Sending/queueing gratuitous ARPs on enp1s0 for AA_VIP
+Nov  1 16:14:21 ------- Keepalived_vrrp[1001948]: Sending gratuitous ARP on enp1s0 for AA_VIP
+Nov  1 16:14:21 ------- Keepalived_vrrp[1001948]: Sending gratuitous ARP on enp1s0 for AA_VIP
+Nov  1 16:14:21 ------- Keepalived_vrrp[1001948]: Sending gratuitous ARP on enp1s0 for AA_VIP
+Nov  1 16:14:21 ------- Keepalived_vrrp[1001948]: Sending gratuitous ARP on enp1s0 for AA_VIP
+Nov  1 16:14:21 ------- Keepalived_vrrp[1001948]: Sending gratuitous ARP on enp1s0 for AA_VIP
+Nov  1 16:14:21 ------- Keepalived_vrrp[1001948]: (VI_2) Sending/queueing gratuitous ARPs on enp2s0 for A_VIP
+Nov  1 16:14:21 ------- Keepalived_vrrp[1001948]: Sending gratuitous ARP on enp2s0 for A_VIP
+Nov  1 16:14:21 ------- Keepalived_vrrp[1001948]: Sending gratuitous ARP on enp2s0 for A_VIP
+Nov  1 16:14:21 ------- Keepalived_vrrp[1001948]: Sending gratuitous ARP on enp2s0 for A_VIP
+Nov  1 16:14:21 ------- Keepalived_vrrp[1001948]: Sending gratuitous ARP on enp2s0 for A_VIP
+Nov  1 16:14:21 ------- Keepalived_vrrp[1001948]: Sending gratuitous ARP on enp2s0 for A_VIP
+
+[O] ovirt hyperviso /var/log/message 분석
+
+Nov  1 16:02:41 ovirt212-252 systemd[1]: Failed to start dnf makecache.
+Nov  1 16:02:43 ovirt212-252 virsh[2846662]: All-whitespace username.
+Nov  1 16:02:43 ovirt212-252 journal[2812]: End of file while reading data: Input/output error
+
+
+
+Nov  1 16:05:13 ovirt212-252 saslpasswd2[2915990]: error deleting entry from sasldb: BDB0073 DB_NOTFOUND: No matching key/data pair found
+Nov  1 16:05:13 ovirt212-252 saslpasswd2[2915990]: error deleting entry from sasldb: BDB0073 DB_NOTFOUND: No matching key/data pair found
+Nov  1 16:05:13 ovirt212-252 saslpasswd2[2915990]: error deleting entry from sasldb: BDB0073 DB_NOTFOUND: No matching key/data pair found
+Nov  1 16:05:13 ovirt212-252 saslpasswd2[2915990]: error deleting entry from sasldb: BDB0073 DB_NOTFOUND: No matching key/data pair found
+
+Nov  1 16:14:17 ovirt212-252 systemd[2907175]: Stopped target Default.
+Nov  1 16:14:17 ovirt212-252 systemd[2907175]: Stopped target Basic System.
+Nov  1 16:14:17 ovirt212-252 systemd[2907175]: Stopped target Timers.
+Nov  1 16:14:17 ovirt212-252 systemd[2907175]: Stopped target Paths.
+Nov  1 16:14:17 ovirt212-252 systemd[2907175]: Stopped target Sockets.
+Nov  1 16:14:17 ovirt212-252 systemd[2907175]: Closed D-Bus User Message Bus Socket.
+Nov  1 16:14:17 ovirt212-252 systemd[2907175]: Closed Podman API Socket.
+Nov  1 16:14:17 ovirt212-252 systemd[2907175]: Reached target Shutdown.
+Nov  1 16:14:17 ovirt212-252 systemd[2907175]: Started Exit the Session.
+Nov  1 16:14:17 ovirt212-252 systemd[2907175]: Reached target Exit the Session.
